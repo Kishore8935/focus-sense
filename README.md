@@ -1,109 +1,256 @@
+# 🎯 Focus Sense
 
+**Focus Sense** is a distraction-aware focus timer and session tracking web application built with **React + Vite** on the frontend and **Node.js / Express** on the backend.  
+It helps users **start focus sessions, monitor attention in real time, and review session summaries** through a clean and minimal interface.
 
-
-# Focus Sense
-
-A minimal, distraction-aware focus timer and session tracker with a React + Vite frontend and Node.js/Express backend. Built to track focus sessions, display live session state, and provide a clean dashboard to review session summaries.
-
----
-
-**Table of Contents**
-- **Overview:** Short project purpose and main features
-- **Architecture:** Frontend and backend outline
-- **Getting Started:** Install, run, and environment variables
-- **Project Structure:** High-level file map
-- **API:** Main endpoints
-- **Contributing:** How to help
-- **Next Steps & Ideas:** Suggested improvements
+> Designed with clarity, extensibility, and real-world usage in mind.
 
 ---
 
-**Overview**: Focus Sense is a lightweight productivity app to help users start timed focus sessions, monitor session state live, and review summaries. It focuses on clarity and simplicity so you can integrate it into a personal workflow or extend it with persistence, authentication, or analytics.
 
-**Main Features**
-- Start/stop focus sessions with a responsive UI
-- Live session state indicators and stats
-- Dashboard for reviewing session summaries
-- Clear separation between frontend (UI) and backend (API)
+## 📌 Table of Contents
+- 🔍 Overview  
+- 🧠 Key Features  
+- 🏗️ Architecture  
+- 🧰 Tech Stack  
+- 🚀 Getting Started  
+- 🗂️ Project Structure  
+- 🔌 API Reference  
+- 🛠️ Development Notes  
+- 🤝 Contributing  
+- 🔮 Next Steps & Ideas  
 
-**Architecture**
-- Frontend: React + Vite, Tailwind CSS for styling. Core UI lives in the `frontend/src` folder.
-- Backend: Node.js + Express API that serves session data. Minimal data model in `backend/src/models` and controllers under `backend/src/controllers`.
+---
 
-**Tech Stack**
-- Frontend: React, Vite, Tailwind CSS
-- Backend: Node.js, Express
-- Dev tools: ESLint, PostCSS
+## 🔍 Overview
 
-**Getting Started (development)**
-Prerequisites:
-- Node.js (16+ recommended)
-- Git
+**Focus Sense** is a lightweight productivity application that helps users:
+- Start and manage timed focus sessions  
+- Monitor session status in real time  
+- Review session summaries via a clean dashboard  
 
-1. Clone the repo and install dependencies for each side.
+The project prioritizes **clarity, modularity, and scalability**, making it suitable for personal productivity workflows or as a foundation for more advanced analytics-driven focus tools.
 
-Backend:
+---
+
+## 🧠 Key Features
+
+✔️ Start / stop focus sessions with a responsive UI  
+✔️ Live session state indicators and statistics  
+✔️ Dashboard view for reviewing past sessions  
+✔️ Clear separation of concerns (Frontend UI ↔ Backend API)  
+✔️ Easy to extend with persistence, auth, or analytics  
+
+---
+## 📸 Screenshots & Demo
+
+<img width="1800" height="1000" alt="image" src="https://github.com/user-attachments/assets/f651110f-9de2-476f-a92d-8ef340da0219" />
+<img width="1888" height="1057" alt="image" src="https://github.com/user-attachments/assets/1c4b1fba-76d5-49ec-86b4-1505083efb89" />
+<img width="1888" height="1064" alt="image" src="https://github.com/user-attachments/assets/9a17c9fa-0078-4e97-9cd7-112f2d2aa400" />
+<img width="1891" height="1070" alt="image" src="https://github.com/user-attachments/assets/3aa4f2f1-efb3-4cd5-81d1-56e952d53199" />
+<img width="1084" height="946" alt="image" src="https://github.com/user-attachments/assets/896d74d6-eab5-4a26-8482-b805e7f0fa47" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/b7cdbe2f-5f34-4ac8-8442-76e714405be9" />
+<img width="1895" height="1001" alt="image" src="https://github.com/user-attachments/assets/606f6e64-2e96-426e-901f-829f29d9916d" />
+
+
+## 🏗️ Architecture
+
+```
+Client (React + Vite)
+        ↓
+ REST API (Node.js + Express)
+        ↓
+ Session Logic (Controllers & Models)
+```
+
+- **Frontend** handles UI, timers, and state visualization  
+- **Backend** exposes REST endpoints for session lifecycle management  
+
+---
+
+## 🔒 Privacy & Data Usage
+
+Your privacy comes first. Focus Sense is built with privacy-by-design.
+
+**📹 Webcam Usage**
+
+- Webcam is used only to detect on-screen focus during a session
+
+- All processing happens locally in your browser
+
+- ❌ No video, images, or frames are recorded, stored, or transmitted
+
+**🌐 Website & YouTube Tracking**
+
+- Activity categorization runs locally via a browser extension
+
+- ❌ No URLs, page content, browsing history, or video titles are stored
+
+- ✅ Only aggregated time spent on productive vs distracting categories is saved
+
+**💾 Data We Store**
+
+- Total focused time
+
+- Total distracted time
+
+- Session duration
+
+- Aggregated productivity statistics
+
+**🚫 Data We Do NOT Collect**
+
+- Webcam images or video
+
+- Exact websites or URLs
+
+- YouTube watch history or titles
+
+- Personal messages or private content
+
+**⚙️ User Control**
+
+- All tracking features are optional
+
+- Webcam and website tracking can be paused or disabled anytime
+
+**🛡️ 100% Local Processing**
+
+- Face detection and focus analysis run entirely on your device
+
+- No raw data leaves your computer
+
+## 🧰 Tech Stack
+
+### 🎨 Frontend
+- React  
+- Vite  
+- Tailwind CSS  
+
+### ⚙️ Backend
+- Node.js  
+- Express.js  
+
+### 🛠️ Dev & Tooling
+- ESLint  
+- PostCSS  
+- Git  
+
+---
+
+## 🚀 Getting Started (Development)
+
+### ✅ Prerequisites
+- Node.js v16+  
+- Git  
+
+---
+
+### 🔧 Backend Setup
+
 ```bash
 cd backend
 npm install
 ```
-Create a `.env` in `backend/` (sample env variables below) and run the API:
+
+Create a `.env` file inside `backend/` and start the server:
+
 ```bash
-# from backend/
 npm run dev
 ```
 
-Frontend:
+---
+
+### 🎨 Frontend Setup
+
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-Open the Vite dev URL (usually `http://localhost:5173`) to view the app.
 
-**Environment Variables (backend)**
-- `PORT` — server port (default 3000)
-- Any DB connection string if you integrate persistence (look to `backend/src/config/db.js`)
-
-**Project Structure (high-level)**
-- `backend/`
-  - `src/index.js` — API server entry
-  - `src/routes/session.routes.js` — session routes
-  - `src/controllers/session.controller.js` — handler logic
-  - `src/models/Session.model.js` — session model
-  - `src/config/db.js` — DB connection helper
-- `frontend/`
-  - `src/main.jsx` — app entry
-  - `src/App.jsx` — root component
-  - `src/components/` — UI components (`Timer.jsx`, `FocusStatus.jsx`, `Toast.jsx`, etc.)
-  - `src/pages/` — page views (Dashboard, FocusSession, Summary, Landing)
-
-**API (quick reference)**
-- POST /sessions — create/start a session
-- PATCH /sessions/:id — update/stop a session
-- GET /sessions — list sessions
-(See `backend/src/routes/session.routes.js` for exact route signatures.)
-
-**Development Notes**
-- The frontend is pure client-side and communicates with the backend API.
-- The backend currently uses a minimal model for sessions; persistence can be added via `backend/src/config/db.js`.
-
-**Contributing**
-- Fork the repo or create a branch from `main`.
-- Follow code style in each area (frontend uses ESLint + Tailwind patterns).
-- Open PRs with a clear summary and test steps.
-
-**Next Steps & Ideas**
-- Add persistent storage (Postgres / MongoDB) and wire `backend/src/config/db.js` to a real datastore.
-- Add authentication so sessions are per-user.
-- Add tests (Jest / React Testing Library) and CI pipeline.
-- Add screenshots or a short demo GIF to the README for visual appeal.
+Open the Vite dev server (usually):
+```
+http://localhost:5173
+```
 
 ---
 
-If you'd like, I can:
-- Add a sample `.env.example` to `backend/`.
-- Wire a simple in-memory persistence to illustrate API usage.
-- Add a demo screenshot and refine wording for a public README.
+## 🔐 Environment Variables (Backend)
 
-Enjoy experimenting with Focus Sense — tell me which next step you want and I’ll implement it.
+```env
+PORT=3000
+# Add DB connection string here if persistence is enabled
+```
+
+Persistence hooks are prepared in:
+`backend/src/config/db.js`
+
+---
+
+## 🗂️ Project Structure (High-Level)
+
+```
+backend/
+ ├─ src/
+ │  ├─ index.js
+ │  ├─ routes/
+ │  │   └─ session.routes.js
+ │  ├─ controllers/
+ │  │   └─ session.controller.js
+ │  ├─ models/
+ │  │   └─ Session.model.js
+ │  └─ config/
+ │      └─ db.js
+frontend/
+ ├─ src/
+ │  ├─ main.jsx
+ │  ├─ App.jsx
+ │  ├─ components/
+ │  └─ pages/
+```
+
+---
+
+## 🔌 API Reference
+
+| Method | Endpoint | Description |
+|------|---------|------------|
+| POST | /sessions | Start a focus session |
+| PATCH | /sessions/:id | Update / stop session |
+| GET | /sessions | Fetch all sessions |
+
+Full definitions available in:
+`backend/src/routes/session.routes.js`
+
+---
+
+## 🛠️ Development Notes
+
+- Frontend is pure client-side and communicates via REST API  
+- Backend uses a minimal session model  
+- Persistence, authentication, and analytics can be added without refactoring core logic  
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository or create a feature branch  
+2. Follow existing code style and folder conventions  
+3. Submit a PR with a clear summary and test steps  
+
+---
+
+## 🔮 Next Steps & Ideas
+
+✨ Add persistent storage (Postgres / MongoDB)  
+✨ Introduce authentication for per-user sessions  
+✨ Add automated testing (Jest / React Testing Library)  
+✨ CI pipeline (GitHub Actions)  
+✨ Demo GIF or screenshots  
+✨ Advanced analytics (focus score, trends)
+
+---
+
+Built as a clean, extensible productivity tool and portfolio-ready full‑stack project.
+
